@@ -1,14 +1,133 @@
 {
     "atomType": "Molecule",
-    "name": "Tabel leg",
+    "name": "Tabel-leg",
     "x": 0,
     "y": 0,
     "uniqueID": 1748245927338,
-    "ioValues": [],
+    "ioValues": [
+        {
+            "name": "Height of table",
+            "ioValue": 800
+        },
+        {
+            "name": "Width of beam",
+            "ioValue": 45
+        },
+        {
+            "name": "Height of beam",
+            "ioValue": 45
+        }
+    ],
     "description": "Molecules provide an organizational structure to contain atoms. Double click on a molecule to enter it. Use the up arrow in the upper right hand corner of the screen to go up one level.",
     "topLevel": true,
-    "allAtoms": [],
-    "allConnectors": [],
+    "allAtoms": [
+        {
+            "atomType": "Output",
+            "name": "Output",
+            "x": 0.98,
+            "y": 0.5,
+            "uniqueID": 1748245938208,
+            "ioValues": [],
+            "description": "Connect geometry here to make it available in the next level up. "
+        },
+        {
+            "atomType": "Rectangle",
+            "name": "Rectangle",
+            "x": 0.14270833333333333,
+            "y": 0.48899755501222497,
+            "uniqueID": 1748245960103,
+            "ioValues": [
+                {
+                    "name": "x length",
+                    "ioValue": 45
+                },
+                {
+                    "name": "y length",
+                    "ioValue": 45
+                }
+            ],
+            "description": "Creates a new rectangle."
+        },
+        {
+            "atomType": "Input",
+            "name": "Height of table",
+            "x": 0.04,
+            "y": 0.2591687041564792,
+            "uniqueID": 1748245968788,
+            "ioValues": [],
+            "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
+            "type": "number"
+        },
+        {
+            "atomType": "Input",
+            "name": "Width of beam",
+            "x": 0.04,
+            "y": 0.4156479217603912,
+            "uniqueID": 1748246032279,
+            "ioValues": [],
+            "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
+            "type": "number"
+        },
+        {
+            "atomType": "Input",
+            "name": "Height of beam",
+            "x": 0.04,
+            "y": 0.58679706601467,
+            "uniqueID": 1748246092547,
+            "ioValues": [],
+            "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
+            "type": "number"
+        },
+        {
+            "atomType": "Rotate",
+            "name": "Rotate",
+            "x": 0.2114583333333333,
+            "y": 0.4205378973105135,
+            "uniqueID": 1748246195693,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1748245960103
+                },
+                {
+                    "name": "x-axis degrees",
+                    "ioValue": 90
+                },
+                {
+                    "name": "y-axis degrees",
+                    "ioValue": 0
+                },
+                {
+                    "name": "z-axis degrees",
+                    "ioValue": 0
+                }
+            ],
+            "description": "Rotates the input geometry around the X, Y, or Z axis. Inputs are degrees."
+        }
+    ],
+    "allConnectors": [
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1748245960103,
+            "ap2ID": 1748246195693
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "x length",
+            "ap2Primary": false,
+            "ap1ID": 1748246032279,
+            "ap2ID": 1748245960103
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "y length",
+            "ap2Primary": false,
+            "ap1ID": 1748246092547,
+            "ap2ID": 1748245960103
+        }
+    ],
     "unitsKey": "MM",
     "fileTypeVersion": 1,
     "compiledBom": {},
