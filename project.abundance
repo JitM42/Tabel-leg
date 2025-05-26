@@ -126,7 +126,7 @@
                 },
                 {
                     "name": "height",
-                    "ioValue": 50
+                    "ioValue": 150
                 }
             ],
             "description": "Extrudes a 2D shape. Input can be negitive. "
@@ -149,8 +149,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.3817708333333333,
-            "y": 0.8166259168704156,
+            "x": 0.38385416666666666,
+            "y": 0.8459657701711492,
             "uniqueID": 1748246289918,
             "ioValues": [
                 {
@@ -163,7 +163,7 @@
                 },
                 {
                     "name": "yDist",
-                    "ioValue": 400
+                    "ioValue": 375
                 },
                 {
                     "name": "zDist",
@@ -362,7 +362,7 @@
         },
         {
             "atomType": "Equation",
-            "name": "t*0.5",
+            "name": "t*0.375+75",
             "x": 0.3083333333333333,
             "y": 0.941320293398533,
             "uniqueID": 1748247627898,
@@ -373,7 +373,7 @@
                 }
             ],
             "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
-            "currentEquation": "t*0.5"
+            "currentEquation": "t*0.375+75"
         }
     ],
     "allConnectors": [
