@@ -144,8 +144,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.31927083333333334,
-            "y": 0.8459657701711492,
+            "x": 0.3817708333333333,
+            "y": 0.8166259168704156,
             "uniqueID": 1748246289918,
             "ioValues": [
                 {
@@ -255,13 +255,13 @@
         {
             "atomType": "Rotate",
             "name": "Rotate",
-            "x": 0.3171875,
-            "y": 0.35452322738386305,
+            "x": 0.4088541666666667,
+            "y": 0.4474327628361858,
             "uniqueID": 1748246707218,
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": 1748246400999
+                    "ioValue": 1748246839975
                 },
                 {
                     "name": "x-axis degrees",
@@ -277,6 +277,65 @@
                 }
             ],
             "description": "Rotates the input geometry around the X, Y, or Z axis. Inputs are degrees."
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.3307291666666667,
+            "y": 0.2567237163814181,
+            "uniqueID": 1748246839975,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1748246400999
+                },
+                {
+                    "name": "height",
+                    "ioValue": 15
+                }
+            ],
+            "description": "Extrudes a 2D shape. Input can be negitive. "
+        },
+        {
+            "atomType": "Move",
+            "name": "Move",
+            "x": 0.49479166666666663,
+            "y": 0.6356968215158925,
+            "uniqueID": 1748246874594,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1748246707218
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 400
+                }
+            ],
+            "description": "Moves a shape laterally in X, Y, Z."
+        },
+        {
+            "atomType": "Equation",
+            "name": "t/2",
+            "x": 0.35260416666666666,
+            "y": 0.5916870415647921,
+            "uniqueID": 1748246892325,
+            "ioValues": [
+                {
+                    "name": "t",
+                    "ioValue": 800
+                }
+            ],
+            "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
+            "currentEquation": "t/2"
         }
     ],
     "allConnectors": [
@@ -300,6 +359,13 @@
             "ap2Primary": false,
             "ap1ID": 1748245968788,
             "ap2ID": 1748246436021
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "t",
+            "ap2Primary": false,
+            "ap1ID": 1748245968788,
+            "ap2ID": 1748246892325
         },
         {
             "ap1Name": "number or geometry",
@@ -369,7 +435,7 @@
             "ap2Name": "geometry",
             "ap2Primary": true,
             "ap1ID": 1748246400999,
-            "ap2ID": 1748246707218
+            "ap2ID": 1748246839975
         },
         {
             "ap1Name": "result",
@@ -386,11 +452,39 @@
             "ap2ID": 1748246436021
         },
         {
+            "ap1Name": "number or geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": 1748246595479,
+            "ap2ID": 1748246839975
+        },
+        {
             "ap1Name": "result",
             "ap2Name": "x length",
             "ap2Primary": false,
             "ap1ID": 1748246634115,
             "ap2ID": 1748246400999
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1748246707218,
+            "ap2ID": 1748246874594
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1748246839975,
+            "ap2ID": 1748246707218
+        },
+        {
+            "ap1Name": "result",
+            "ap2Name": "zDist",
+            "ap2Primary": false,
+            "ap1ID": 1748246892325,
+            "ap2ID": 1748246874594
         }
     ],
     "unitsKey": "MM",
