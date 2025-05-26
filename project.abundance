@@ -15,7 +15,7 @@
         },
         {
             "name": "Height of beam",
-            "ioValue": 45
+            "ioValue": 15
         },
         {
             "name": "ply",
@@ -56,7 +56,7 @@
                 },
                 {
                     "name": "y length",
-                    "ioValue": 45
+                    "ioValue": 15
                 }
             ],
             "description": "Creates a new rectangle."
@@ -156,7 +156,7 @@
                 },
                 {
                     "name": "zDist",
-                    "ioValue": 747.5
+                    "ioValue": 762.5
                 }
             ],
             "description": "Moves a shape laterally in X, Y, Z."
@@ -174,7 +174,7 @@
                 },
                 {
                     "name": "y",
-                    "ioValue": 45
+                    "ioValue": 15
                 }
             ],
             "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
@@ -193,7 +193,7 @@
                 },
                 {
                     "name": "y length",
-                    "ioValue": 1026.25
+                    "ioValue": 996.25
                 }
             ],
             "description": "Creates a new rectangle."
@@ -211,7 +211,7 @@
                 },
                 {
                     "name": "b",
-                    "ioValue": 45
+                    "ioValue": 15
                 },
                 {
                     "name": "p",
