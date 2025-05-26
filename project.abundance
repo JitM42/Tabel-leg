@@ -158,7 +158,7 @@
                 },
                 {
                     "name": "yDist",
-                    "ioValue": 0
+                    "ioValue": 400
                 },
                 {
                     "name": "zDist",
@@ -336,6 +336,24 @@
             ],
             "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
             "currentEquation": "t/2"
+        },
+        {
+            "atomType": "Assembly",
+            "name": "Assembly",
+            "x": 0.6385416666666667,
+            "y": 0.6723716381418092,
+            "uniqueID": 1748247392640,
+            "ioValues": [
+                {
+                    "name": "Shape 1",
+                    "ioValue": 1748246874594
+                },
+                {
+                    "name": "Shape 2",
+                    "ioValue": 1748246289918
+                }
+            ],
+            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape"
         }
     ],
     "allConnectors": [
@@ -424,6 +442,13 @@
             "ap2ID": 1748246289918
         },
         {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 2",
+            "ap2Primary": false,
+            "ap1ID": 1748246289918,
+            "ap2ID": 1748247392640
+        },
+        {
             "ap1Name": "result",
             "ap2Name": "zDist",
             "ap2Primary": false,
@@ -478,6 +503,13 @@
             "ap2Primary": true,
             "ap1ID": 1748246839975,
             "ap2ID": 1748246707218
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 1",
+            "ap2Primary": false,
+            "ap1ID": 1748246874594,
+            "ap2ID": 1748247392640
         },
         {
             "ap1Name": "result",
