@@ -372,8 +372,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.5760416666666667,
-            "y": 0.33251833740831294,
+            "x": 0.5885416666666666,
+            "y": 0.46210268948655253,
             "uniqueID": 1748249385831,
             "ioValues": [
                 {
@@ -398,8 +398,8 @@
         {
             "atomType": "Equation",
             "name": "t-100",
-            "x": 0.4739583333333333,
-            "y": 0.15647921760391198,
+            "x": 0.3546875,
+            "y": 0.05623471882640586,
             "uniqueID": 1748249408265,
             "ioValues": [
                 {
@@ -413,8 +413,8 @@
         {
             "atomType": "Rectangle",
             "name": "Rectangle",
-            "x": 0.5802083333333333,
-            "y": 0.11246943765281173,
+            "x": 0.471875,
+            "y": 0.08312958435207823,
             "uniqueID": 1748249535951,
             "ioValues": [
                 {
@@ -423,10 +423,112 @@
                 },
                 {
                     "name": "y length",
-                    "ioValue": 10
+                    "ioValue": 65
                 }
             ],
             "description": "Creates a new rectangle."
+        },
+        {
+            "atomType": "Constant",
+            "name": "Angle",
+            "x": 0.02395833333333333,
+            "y": 0.6210268948655256,
+            "uniqueID": 1748249618618,
+            "ioValues": [],
+            "description": "Defines a mathematical constant.",
+            "value": 53
+        },
+        {
+            "atomType": "Rotate",
+            "name": "Rotate",
+            "x": 0.5260416666666667,
+            "y": 0.20293398533007334,
+            "uniqueID": 1748249668843,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1748249535951
+                },
+                {
+                    "name": "x-axis degrees",
+                    "ioValue": 53
+                },
+                {
+                    "name": "y-axis degrees",
+                    "ioValue": 0
+                },
+                {
+                    "name": "z-axis degrees",
+                    "ioValue": 0
+                }
+            ],
+            "description": "Rotates the input geometry around the X, Y, or Z axis. Inputs are degrees."
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.5802083333333333,
+            "y": 0.08312958435207823,
+            "uniqueID": 1748249701279,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1748249668843
+                },
+                {
+                    "name": "height",
+                    "ioValue": 15
+                }
+            ],
+            "description": "Extrudes a 2D shape. Input can be negitive. "
+        },
+        {
+            "atomType": "Move",
+            "name": "Move",
+            "x": 0.6234375000000001,
+            "y": 0.2591687041564792,
+            "uniqueID": 1748249741072,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1748249701279
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": 400
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 400
+                }
+            ],
+            "description": "Moves a shape laterally in X, Y, Z."
+        },
+        {
+            "atomType": "Assembly",
+            "name": "Assembly",
+            "x": 0.7104166666666666,
+            "y": 0.45476772616136923,
+            "uniqueID": 1748249785437,
+            "ioValues": [
+                {
+                    "name": "Shape 1",
+                    "ioValue": 1748249741072
+                },
+                {
+                    "name": "Shape 2",
+                    "ioValue": 1748249385831
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": 1748249009217
+                }
+            ],
+            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape"
         }
     ],
     "allConnectors": [
@@ -557,11 +659,25 @@
             "ap2ID": 1748246839975
         },
         {
+            "ap1Name": "number or geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": 1748246595479,
+            "ap2ID": 1748249701279
+        },
+        {
             "ap1Name": "result",
             "ap2Name": "x length",
             "ap2Primary": false,
             "ap1ID": 1748246634115,
             "ap2ID": 1748246400999
+        },
+        {
+            "ap1Name": "result",
+            "ap2Name": "y length",
+            "ap2Primary": false,
+            "ap1ID": 1748246634115,
+            "ap2ID": 1748249535951
         },
         {
             "ap1Name": "geometry",
@@ -593,6 +709,20 @@
         },
         {
             "ap1Name": "result",
+            "ap2Name": "zDist",
+            "ap2Primary": false,
+            "ap1ID": 1748246892325,
+            "ap2ID": 1748249741072
+        },
+        {
+            "ap1Name": "result",
+            "ap2Name": "xDist",
+            "ap2Primary": false,
+            "ap1ID": 1748246892325,
+            "ap2ID": 1748249741072
+        },
+        {
+            "ap1Name": "result",
             "ap2Name": "yDist",
             "ap2Primary": false,
             "ap1ID": 1748247627898,
@@ -606,11 +736,25 @@
             "ap2ID": 1748249385831
         },
         {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 3",
+            "ap2Primary": false,
+            "ap1ID": 1748249009217,
+            "ap2ID": 1748249785437
+        },
+        {
             "ap1Name": "number or geometry",
             "ap2Name": "t",
             "ap2Primary": false,
             "ap1ID": 1748249319637,
             "ap2ID": 1748249408265
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 2",
+            "ap2Primary": false,
+            "ap1ID": 1748249385831,
+            "ap2ID": 1748249785437
         },
         {
             "ap1Name": "result",
@@ -625,6 +769,48 @@
             "ap2Primary": false,
             "ap1ID": 1748249408265,
             "ap2ID": 1748249535951
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1748249535951,
+            "ap2ID": 1748249668843
+        },
+        {
+            "ap1Name": "number",
+            "ap2Name": "x-axis degrees",
+            "ap2Primary": false,
+            "ap1ID": 1748249618618,
+            "ap2ID": 1748246707218
+        },
+        {
+            "ap1Name": "number",
+            "ap2Name": "x-axis degrees",
+            "ap2Primary": false,
+            "ap1ID": 1748249618618,
+            "ap2ID": 1748249668843
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1748249668843,
+            "ap2ID": 1748249701279
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1748249701279,
+            "ap2ID": 1748249741072
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 1",
+            "ap2Primary": false,
+            "ap1ID": 1748249741072,
+            "ap2ID": 1748249785437
         }
     ],
     "unitsKey": "MM",
